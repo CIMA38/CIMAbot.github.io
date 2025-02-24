@@ -241,16 +241,52 @@ ul{
     
 }
 
-
-header{
+header {
     padding: 10px 22px 0px 22px;
-    nav{
+    
+    nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
         height: 100%;
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            @media (max-width: 768px) {  // Móviles y tablets
+                flex-direction: column;
+                position: absolute;
+                position: fixed; // Fijar posición
+                top: 0; // Ubicar arriba de todo
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: $primary-color;
+                text-align: center;
+                padding: 20px 0;
+                display: none;  // Ocultar menú por defecto
+                z-index: 1000; // Asegurar que esté por encima de otros elementos
+
+                &.active { 
+                    display: flex; // Mostrar cuando esté activo
+                }
+            }
+        }
+    }
+
+    .menu-toggle {
+        display: none; // Oculto en pantallas grandes
+        font-size: 24px;
+        cursor: pointer;
+        
+        @media (max-width: 768px) {
+            display: block; // Mostrar en móviles
+        }
     }
 }
+
 
 .header__concepto{
     background-color: $primary-color;
@@ -476,6 +512,13 @@ header{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
+/* Ocultar imagen en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .imagen__visitanos {
+        display: none;
+    }
+}
+
 
 /*HORARIOS*/
 .horarios {
@@ -563,27 +606,27 @@ header{
 
 .testigos__grid {
     flex: 2;
-    max-width: 55%; /* El grid ocupa 55% del espacio */
+    max-width: 55%;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
 .testigo__amarillo {
-    display: flex; /* Esto coloca la imagen y el contenido lado a lado */
-    align-items: center; /* Centra el contenido verticalmente */
+    display: flex;
+    align-items: center;
 }
 
 .testigo__icon {
-    border-top-right-radius: 30%; /* Borde superior derecho semicircular */
-    border-bottom-right-radius: 30%; /* Borde inferior derecho semicircular */
-    margin-right: 20px; /* Espacio entre la imagen y el contenido */
-    width: 250px; /* Ajusta el tamaño de la imagen */
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 30%;
+    margin-right: 20px;
+    width: 250px;
     height: auto;
 }
 
 .testigo__content {
-    flex: 1; /* Ocupa el espacio restante */
+    flex: 1;
 }
 
 /* Contenedor principal de cada testigo */
@@ -601,13 +644,14 @@ header{
 }
 
 .content-section-testigo {
-    width: 80%; 
+    width: 80%;
     padding: 20px;
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
+
 .content-section-testigo:hover {
     transform: translateY(-10px);
 }
@@ -621,12 +665,10 @@ header{
     object-fit: cover;
 }
 
-
 /* Contenido visible del testigo */
 .testigo__content {
     padding: 15px;
 }
-
 
 .testigo h3 {
     font-size: 1.5rem;
@@ -654,12 +696,11 @@ header{
     transition: color 0.3s ease-in-out;
 }
 
-
 /* Detalle desplegable */
 .testigo__detalle {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas con el mismo ancho */
-    gap: 20px; /* Espaciado entre los elementos */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
@@ -669,14 +710,11 @@ header{
     height: auto;
 }
 
-/* Estilo para los detalles desplegables */
 .testigo.open .testigo__detalle {
-    max-height: none; /* El contenedor se expande según el contenido */
+    max-height: none;
     padding: 15px;
 }
 
-
-/* Tarjeta individual dentro del detalle */
 .testigo__detalle .testigo__card {
     background: #ffffff;
     padding: 10px;
@@ -693,44 +731,137 @@ header{
     border-radius: 40%;
 }
 
-/*CONTACTO RÁPIDO*/
-/* Estilo del contenedor de contacto rápido */
+/* CONTACTO RÁPIDO */
 .contacto-rapido {
-    background-color: #f9f9f9; 
-    border: 2px solid #ccc; 
-    border-radius: 10px; 
-    margin: 320px auto; 
-    text-align: center; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    max-width: 800px; 
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin: 320px auto;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
 }
 
-/* Estilo del título */
 .contacto-rapido h3 {
-    font-size: 24px; 
-    font-weight: bold; 
-    color: #333; 
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
     margin-bottom: 10px;
 }
 
-/* Estilo del párrafo */
 .contacto-rapido p {
-    font-size: 16px; 
-    color: #555; 
-    margin: 0; 
+    font-size: 16px;
+    color: #555;
+    margin: 0;
 }
 
-/* Estilo de los enlaces */
 .contacto-rapido a {
-    color: $primary-color; 
-    text-decoration: none; 
-    font-weight: bold; 
-    transition: color 0.3s ease; 
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .contacto-rapido a:hover {
-    color: $primary-color; 
-    text-decoration: underline; 
+    color: $primary-color;
+    text-decoration: underline;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDAD */
+
+@media (max-width: 1200px) {
+    .testigos__grid {
+        max-width: 100%;
+    }
+
+    .testigo__amarillo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testigo__icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 80%;
+    }
+
+    .testigo h3 {
+        font-size: 1.25rem;
+    }
+
+    .testigo p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .testigos__grid {
+        flex: 1;
+        max-width: 100%;
+    }
+
+    .testigo__amarillo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testigo__icon {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .testigo h3 {
+        font-size: 1rem;
+    }
+
+    .testigo p {
+        font-size: 0.875rem;
+    }
+
+    .contacto-rapido {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .contacto-rapido h3 {
+        font-size: 20px;
+    }
+
+    .contacto-rapido p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testigo {
+        margin: 5px 10px;
+    }
+
+    .testigo__image {
+        height: auto;
+    }
+
+    .testigo__content {
+        padding: 10px;
+    }
+
+    .content-section-testigo {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .testigo__detalle {
+        grid-template-columns: 1fr;
+    }
+
+    .testigo__card {
+        padding: 8px;
+    }
+
+    .testigo__card-icon {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 
@@ -812,8 +943,6 @@ header{
     }
 
 
-/*SERVICIOS*/
-
 /* Descripción de los servicios */
 .descripcion-servicios {
     text-align: center;
@@ -826,24 +955,65 @@ header{
     width: 100%;
     color: white; /* Asegura que el texto sea visible sobre la imagen */
     box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5); /* Sombra interna para mejorar contraste */
+
+    h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $terciary-color;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto;
+        color: $black-color;
+    }
+
+    @media (max-width: 1024px) { // Tablets
+        height: 250px;
+        padding: 60px 15px;
+        
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 768px) { // Móviles
+        height: auto;
+        padding: 50px 10px;
+
+        h2 {
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    }
+
+    @media (max-width: 480px) { // Teléfonos pequeños
+        padding: 40px 5px;
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
 }
 
-.descripcion-servicios h2 {
-    font-size: 3rem; 
-    margin-bottom: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: $terciary-color; 
-}
-
-.descripcion-servicios p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    max-width: 900px;
-    margin: 0 auto;
-    color: $black-color;
-}
 
 /* Apartados de los servicios */
 
@@ -917,7 +1087,6 @@ header{
 
 
 
-
 /* Sección de Misión, Visión y Quiénes Somos */
 .container__section {
     background-color: $white-color;
@@ -926,6 +1095,7 @@ header{
     margin: 80px 0;
     max-width: 1200px;
     margin: 80px auto;
+    flex-wrap: wrap; /* Esto permite que los elementos se ajusten cuando la pantalla sea pequeña */
 }
 
 .content-section {
@@ -938,7 +1108,7 @@ header{
 }
 
 .content-section-big {
-    width: 80%; 
+    width: 80%;
     padding: 20px;
     border-radius: 8px;
     background-color: #fff;
@@ -992,7 +1162,7 @@ header{
 .about-us {
     background-color: #f7f3e6;
     text-align: center; /* Centra el contenido */
-    margin-bottom: 50px; /* Espaciado adicional si es necesario */
+    
 }
 
 /* Imagen y texto en Misión y Visión */
@@ -1016,17 +1186,40 @@ header{
     margin-top: 20px; /* Espacio entre la imagen y el título */
 }
 
+/* Media Query para pantallas pequeñas (móviles y tablets) */
+@media (max-width: 768px) {
+    .container__section {
+        flex-direction: column; /* Coloca las secciones una encima de la otra */
+    }
 
-.map-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 15px;
-    max-width: 100%;
-    height: 0;
-    padding-bottom: 56.25%; /* Proporción 16:9 */
+    .mission, .vision {
+        flex-direction: column; /* Muestra la imagen y el texto uno debajo del otro */
+        text-align: center;
+        margin-bottom: 20px; /* Espacio entre las secciones */
+    }
+
+    .content-section {
+        width: 75%; /* Reducimos el tamaño para ajustarlo mejor */
+        padding: 20px;
+        margin-left: 50px;
+        border-radius: 8px;
+    }
+    .mission .image-container, .vision .image-container {
+        width: 100%; /* Las imágenes ocupan el 100% en pantallas pequeñas */
+        margin-right: 0;
+        margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+    }
+
+    .mission .content-text, .vision .content-text {
+        width: 100%; /* El texto ocupa el 100% */
+    }
+
+    .content-section-big {
+        
+        margin: 40px auto;
+    }
 }
+
 
 
 /* Contenedor principal del mapa */
@@ -1366,7 +1559,6 @@ button:hover {
 
 
 /*MODALES*/
-
 .apartados-servicios {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1374,6 +1566,11 @@ button:hover {
     padding: 20px;
     margin-left: 60px;
     max-width: 1200px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr; // Se acomoda uno bajo el otro en pantallas pequeñas
+        margin-left: 0; // Ajuste para centrar
+    }
 }
 
 .apartado-modulos {
@@ -1384,6 +1581,10 @@ button:hover {
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
+
+    @media (max-width: 768px) {
+        width: 100%; // Asegura que ocupe todo el ancho disponible
+    }
 }
 
 .apartado-modulos:hover {
@@ -1650,7 +1851,8 @@ button:hover {
     width: 100%;
 }
 
-/* CHATBOT*/
+
+/* CHATBOT */
 .chatbox {
     display: flex;
     flex-direction: column;
@@ -1668,8 +1870,19 @@ button:hover {
     margin-left: 15px;
 }
 
-/* Resto del estilo para el chat y mensajes */
+/* Ocultar imagen y ajustar chat en pantallas pequeñas */
+@media (max-width: 768px) {
+    .chatbot-image {
+        display: none; /* Oculta la imagen */
+    }
 
+    .chatbox {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        margin-right: 0; /* Elimina el margen */
+    }
+}
+
+/* Estilos generales del chat */
 .chatbox-header {
     background-color: #003366;
     color: white;
@@ -1686,43 +1899,10 @@ button:hover {
     background-color: #f9f9f9;
 }
 
+/* Input y botón del chat */
 .chatbox-input {
     display: flex;
-    align-items: center;  /* Asegura que el input y el botón estén alineados verticalmente */
-    padding: 10px;
-    border-top: 1px solid #ccc;
-    background-color: #fff;
-    width: 100%;  /* Asegura que el contenedor ocupe todo el espacio disponible */
-}
-
-.chatbox-input input {
-    flex: 1;  /* Hace que el input ocupe todo el espacio disponible */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    margin: 0;  /* Elimina márgenes para evitar desalineación */
-}
-
-.chatbox-input button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: $navy-color;
-    color: white;
-    font-size: 14px;
-    cursor: pointer; 
-    margin-top: 300px;
-}
-
-/* Efecto hover */
-.chatbox-input button:hover {
-    background-color: $primary-color;
-}
-
-.chatbox-input {
-    display: flex;
-    align-items: center; /* Alinea verticalmente el botón y el input */
+    align-items: center;
     padding: 10px;
     border-top: 1px solid #ccc;
     background-color: #fff;
@@ -1730,12 +1910,12 @@ button:hover {
 }
 
 .chatbox-input input {
-    flex-grow: 1; 
+    flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
-    margin: 0; 
+    margin: 0;
 }
 
 .chatbox-input button {
@@ -1746,11 +1926,35 @@ button:hover {
     color: white;
     font-size: 14px;
     cursor: pointer;
-    margin-left: 715px; /* Espacio entre el input y el botón */
-    display: flex;
-    align-items: end; /* Centra el texto del botón verticalmente */
+    margin-top: 300px;
+    margin-left: 700px; /* Espaciado ajustado en pantallas grandes */
 }
 
+/* Ajuste del botón en pantallas medianas */
+@media (max-width: 1024px) {
+    .chatbox-input button {
+        margin-left: 300px; /* Reduce el margen en pantallas medianas */
+        margin-top: 310px;
+    }
+}
+
+/* Ajuste del botón en pantallas pequeñas */
+@media (max-width: 768px) {
+    .chatbox-input button {
+        margin-top: 350px;
+        width: 100%; /* Botón ocupa todo el ancho */
+        margin-left: 0px; /* Elimina margen innecesario */
+        text-align: center; /* Centra el texto del botón */
+    }
+}
+
+
+/* Efecto hover */
+.chatbox-input button:hover {
+    background-color: $primary-color;
+}
+
+/* Mensajes */
 .chatbox-messages {
     display: flex;
     flex-direction: column;
