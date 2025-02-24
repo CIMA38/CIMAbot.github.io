@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIMA</title>
+    <link rel="icon" type="image/x-icon" href="../img/CIMA.png">
+    <link rel="stylesheet" href="../public/css/main.css">
+</head>
+<body>
+        <!-- Encabezado del sitio web con menú de navegación -->
+        <header class="header__index">
+            <nav>
+                <h1>
+                    <img class="logo" src="../img/CIMA_logo.png">
+                </h1>
+                <ul>
+                    <li><a href="index.html" class="btn btn-cta">Inicio</a></li>
+                    <li><a href="html/nosotros.html">Nosotros</a></li>
+                    <li><a href="html/servicios.html">Servicios</a></li>
+                    <li><a href="html/contacto.html">Atención al cliente</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <!--Carucel con imagenes de CIMA-->
+        <main class="container">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="../img/CIMA_foto.jpg" alt="Imagen 1">
+                    <img src="../img/carrusel_1.png" alt="Imagen 2">
+                    <img src="../img/carrusel_2.png" alt="Imagen 3">
+                    <img src="../img/carrusel_3.png" alt="Imagen 4">
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                </div>
+            </div>
+        
+            <!-- Contenido superpuesto -->
+            <div class="content-overlay">
+                <div class="logo__cima">
+                    <img src="../img/CIMA.png" alt="CIMA">
+                </div>
+                <div class="letras__index">
+                    <h3>Centro Integral en</h3>
+                    <h2>MECATRÓNICA AUTOMOTRIZ ARMENTA</h2>
+                    <p>Comprometidos con el Bienestar Electrónico de tu Automóvil</p>
+                </div>
+            </div>
+        </main>
+
+        <!--Horarios-->
+        <div class="horarios">
+            <img src="../img/relojito.png" width="30%">
+            <h2>Horarios de Atención</h2>
+            <p>Lunes a Viernes</p>
+            <p>9:30 AM - 2:30 PM</p>
+            <p>4:30 PM - 6:30 PM</p>
+            <span>¡Te esperamos!</span>
+            <a href="html/contacto.html" class="boton-chat">Ir a la página de Contacto</a>
+        </div>
+
+
+        <!--Razones-->
+        <div class="container__razonesdos">
+            <h2 class="titulo__razones">¿Por qué nosotros?</h2>
+            <div class="razones">
+                <div class="razon">
+                    <div class="icono">
+                        <img src="../img/2.png" alt="Calidad" class="icono-img">
+                    </div>
+                    <h3>Calidad Garantizada</h3>
+                    <p>Ofrecemos servicios y productos de alta calidad para garantizar la satisfacción de nuestros clientes.</p>
+                </div>
+                <div class="razon">
+                    <div class="icono">
+                        <img src="../img/3.png" alt="Confianza" class="icono-img">
+                    </div>
+                    <h3>Confianza</h3>
+                    <p>Somos una empresa comprometida con la transparencia y el bienestar de nuestros clientes.</p>
+                </div>
+                <div class="razon">
+                    <div class="icono">
+                        <img src="../img/4.png" alt="Innovación" class="icono-img">
+                    </div>
+                    <h3>Innovación</h3>
+                    <p>Utilizamos tecnología avanzada para mantenernos a la vanguardia de la industria automotriz.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container__testigos container__razones">
+            <div class="titulo__testigos">
+                <h2>¿Hay algunos de estos testigos encendido en tu tablero?</h2>
+                <h2>¡VISITAMOS!</h2>
+            </div>
+            <!--Semáforo de Testigos-->
+            <div class="contenedor__visitanos">
+                <div class="imagen__visitanos">
+                    <img src="../img/motor.jpg" width="80%">
+                </div>
+                <div class="testigos__grid">
+                    <!-- Testigo Rojo -->
+                    <div class="testigo content-section-testigo" id="testigo_rojo">
+                            <div class="testigo__amarillo">
+                                <img src="../img/testigo_r.png" alt="Testigo Rojo" class="testigo__icon">
+                                <div class="testigo__content">
+                                    <h3>Testigo Rojo</h3>
+                                    <p>Señal de peligro o falla grave. Es importante detener el vehículo y buscar solución inmediata.</p>
+                                    <p class="clic">Haz clic para más información</p>
+                                </div>
+                            </div>
+    
+                            <div class="testigo__detalle">
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/nivel de aceite.jpg" alt="Nivel de Aceite" class="testigo__card-icon">
+                                    <h4>Nivel de Aceite</h4>
+                                    <p>Nivel incorrecto de aceite.</p>
+                                </div>
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/bateria.webp" alt="Fallo batería" class="testigo__card-icon">
+                                    <h4>Fallo batería</h4>
+                                    <p>Problema en alternador o batería.</p>
+                                </div>
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/refrigerante.jpg" alt="Refrigerante" class="testigo__card-icon">
+                                    <h4>Refrigerante</h4>
+                                    <p>Alcanza la temperatura máxima o mínima.</p>
+                                </div>
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/direccion-asistida.webp" alt="Dirección asistida" class="testigo__card-icon">
+                                    <h4>Dirección asistida.</h4>
+                                    <p>La dirección tiene inconvenientes.</p>
+                                </div>
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/liquido de frenos.png" alt="Líquido de frenos" class="testigo__card-icon">
+                                    <h4>Líquido de frenos.</h4>
+                                    <p>Anomalías en sistema o líquido de frenos.</p>
+                                </div>
+                        
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/airbag.jpg" alt="Airbag" class="testigo__card-icon">
+                                    <h4>Airbag</h4>
+                                    <p>Aparece cuando alguno tiene problemas.</p>
+                                </div>
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/abs.jpg" alt="ABS" class="testigo__card-icon">
+                                    <h4>ABS</h4>
+                                    <p>Se enciende cuando no funciona.</p>
+                                </div>
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/cambio_auto.png" alt="Cambios automático" class="testigo__card-icon">
+                                    <h4>Cambio automático.</h4>
+                                    <p>Se ilumina cuando hay averia en la caja de cambios.</p>
+                                </div>
+                            </div>
+                    </div>
+                    
+                    <!-- Testigo Amarillo -->
+                    <div class="testigo content-section-testigo" id="testigo_amarillo">
+                            <div class="testigo__amarillo">
+                                <img src="../img/testigo_a.png" alt="Testigo Amarillo" class="testigo__icon">
+                                <div class="testigo__content">
+                                    <h3>Testigo Amarillo</h3>
+                                    <p>Indica advertencias o situaciones que requieren la atención del conductor, como revisiones o fallos moderados.</p>
+                                    <p class="clic">Haz clic para más información</p>
+                                </div>
+                            </div>
+                            <div class="testigo__detalle">
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/motor.webp" alt="Problemas con los gases" class="testigo__card-icon">
+                                    <h4>Problemas en Tren motriz</h4>
+                                    <p>Indica un problema en el motor o en la inyección.</p>
+                                </div>
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/bombilla.jpg" alt="Bombilla fundida" class="testigo__card-icon">
+                                    <h4>Bombilla fundida</h4>
+                                    <p>Indica la bombilla que se ha fundido, en otros hay que buscarla. </p>
+                                </div>
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/precalentamiento.jpg" alt="Precalentamiento" class="testigo__card-icon">
+                                    <h4>Precalentamiento</h4>
+                                    <p>Aumento de la temperatura en el motor o problemas con calentadores.</p>
+                                </div>
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/gasolina.jpg" alt="Falta de combustible" class="testigo__card-icon">
+                                    <h4>Falta de combustible</h4>
+                                    <p>El testigo de la reserva comúnmente conocido.</p>
+                                </div>
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/eps.webp" alt="EPS" class="testigo__card-icon">
+                                    <h4>EPS</h4>
+                                    <p>Se da cuando el control de estabilidad deja de dar potencia a las ruedas. </p>
+                                </div>
+
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/inmovilizador.png" alt="Inmovilizador" class="testigo__card-icon">
+                                    <h4>Inmovilizador</h4>
+                                    <p>Refleja una falta de eficiencia en el sistema de bloqueo electrónico.</p>
+                                </div>
+                                
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/presion.webp" alt="Presión ruedas" class="testigo__card-icon">
+                                    <h4>Presión ruedas</h4>
+                                    <p>Se ilumina siempre que la presión de las ruedas sea incorrecta.</p>
+                                </div>
+                                <div class="testigo__card">
+                                    <img src="../img/testigos/pastillas.jpg" alt="Pastillas de freno" class="testigo__card-icon">
+                                    <h4>Pastillas de freno.</h4>
+                                    <p>Indica un desgaste en cualquiera de las pastillas de freno de tu coche.</p>
+                                </div>
+                            </div>
+                    </div>
+    
+                    <!-- Testigo Verde -->
+                    <div class="testigo content-section-testigo" id="testigo_verde">
+                        <div class="testigo__amarillo">
+                            <img src="../img/testigo_verde.png" alt="Testigo Verde" class="testigo__icon">
+                            <div class="testigo__content">
+                                <h3>Testigo Verde</h3>
+                                <p>Indica el correcto funcionamiento de algún sistema, como luces o señalizaciones activadas.</p> 
+                                <p class="clic">Haz clic para más información</p>
+                            </div>
+                        </div>
+                        
+                        <div class="testigo__detalle">
+                            <div class="testigo__card">
+                                <img src="../img/testigos/control de crucero.avif" alt="Control de Crucero" class="testigo__card-icon">
+                                <h4>Control de Crucero</h4>
+                                <p>Se enciende para indicar al usuario que está funcionando de forma correcta.</p>
+                            </div>
+                            <div class="testigo__card">
+                                <img src="../img/testigos/ldw.jpg" alt="LDW" class="testigo__card-icon">
+                                <h4>LDW</h4>
+                                <p>Hace referencia al aviso involuntario de cambio de carril e informa al usuario del cambio.</p>
+                            </div>
+                            <div class="testigo__card">
+                                <img src="../img/testigos/luces auto.jpg" alt="Luces Automáticas" class="testigo__card-icon">
+                                <h4>Luces Automáticas</h4>
+                                <p>Indica el cambio de luces cortas a largas siempre que se considere oportuno.</p>
+                            </div>
+                            <div class="testigo__card">
+                                <img src="../img/testigos/stop.jpg" alt="Star/Stop No Disponible" class="testigo__card-icon">
+                                <h4>Star/Stop No Disponible</h4>
+                                <p>Es un símbolo que se ilumina cuando el conductor desactiva, de forma voluntaria, el sistema.</p>
+                            </div>
+                            <div class="testigo__card">
+                                <img src="../img/testigos/marchas.jpg" alt="Cambio de Marchas" class="testigo__card-icon">
+                                <h4>Cambio de Marchas</h4>
+                                <p>Se activa siempre que el vehículo considere que se ha de realizar el cambio de marchas.</p>
+                            </div>
+                            <div class="testigo__card">
+                                <img src="../img/testigos/luces anti.png" alt="Luces Antiniebla" class="testigo__card-icon">
+                                <h4>Luces Antiniebla</h4>
+                                <p>Se activa siempre que se enciendan cualquiera de las luces mencionadas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Ubicación de CIMA-->
+        <div class="mapa-container">
+            <h2 class="map-title">Nuestra Ubicación</h2>
+                <iframe 
+                    class="map-frame" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d775.3535426365847!2d-98.70554677968693!3d20.092186998706055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a77549f28f63%3A0x5635454546758fa9!2sSan%20Jos%C3%A9%20113%2C%20Carboneras%2C%2042184%20Carboneras%2C%20Hgo.!5e0!3m2!1ses!2smx!4v1736049043647!5m2!1ses!2smx" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            <a href="https://www.google.com/maps/@20.0922889,-98.7053008,3a,75y,358.49h,85.21t/data=!3m7!1e1!3m5!1s8UKXbDCVjy1doTYtyqabMg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D4.791204798111849%26panoid%3D8UKXbDCVjy1doTYtyqabMg%26yaw%3D358.48748764315854!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="location-button">Ver en Google Maps</a>
+        </div>                      
+
+        <!-- Pie de Página -->
+        <footer class="footer">
+            <div class="footer-item">
+                <h4>Contactos</h4>
+                <a href="tel:7711122954" title="Llamar">771-112-2954<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79C5.51 10.21 5.54 8.72 6.78 8.02L8.9 6.74C9.64 6.15 10.88 6.27 11.55 7.04L13.57 9.48C14.3 10.24 14.18 11.58 13.43 12.17L11.3 13.46C10.56 14.05 9.33 13.94 8.64 13.28L7.48 11.78C6.87 10.97 6.69 10.12 6.62 10.79Z"></path></svg></a>
+                <a href="mailto:cima.automotriz@gmail.com" title="Correo Electrónico">cima.automotriz@gmail.com <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12l8 4V6l-8 4-8-4v10l8-4z"></path></svg></a>
+            </div>
+        
+            <div class="footer-item">
+                <h4>Redes Sociales</h4>
+                <a href="https://www.facebook.com/cimaelectronicaautomotriz" target="_blank" title="Facebook">Facebook<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12l-3.8 3.8-2.3-2.3 2.8-3.1H13V6h5.4L12 0 7.2 6H13v5.4H9.2l-2.8 3.1 2.3 2.3L12 12z"></path></svg></a>
+                <a href="https://www.twitter.com/cima" target="_blank" title="Twitter">Twitter <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 3a10 10 0 0 1-2.8.8A4.6 4.6 0 0 0 22.4 1a9.9 9.9 0 0 1-3.2 1.2A4.6 4.6 0 0 0 15.7 0C13.4 0 11.5 2 11.5 4.3c0 .4 0 .8.1 1.2C7.8 5.3 4.4 3.5 2 0c-.4 1.2-.6 2.4-.6 3.6 0 2.6 1.3 5 3.2 6.5a4.5 4.5 0 0 1-2.1-.6v.1c0 3.6 2.6 6.6 6 7.3a4.7 4.7 0 0 1-2.1.1c1.5 4.4 5.7 6.4 9.7 6.4A9.9 9.9 0 0 0 23 3z"></path></svg></a>
+            </div>
+        
+            <div class="footer-item">
+                <h4>Ubicación</h4>
+                <p>Calle San José, No.113 Colonia Carboneras</p>
+                <p>Pachuca de Soto, Hidalgo, México, 42184</p>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!4v1735400915506!6m8!1m7!1s8UKXbDCVjy1doTYtyqabMg!2m2!1d20.09228890807418!2d-98.70530082786382!3f333.65449164765414!4f-0.5329092454161355!5f0.7820865974627469" 
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+               
+            <div class="footer-item">
+                <h4>Política</h4>
+                <a href="politica.html" title="Política de Privacidad">Política de Privacidad</a>
+                <a href="terminos.html" title="Términos de Servicio">Términos de Servicio</a>
+            </div>
+        </footer>
+
+        <div class="container__derechos">
+            <h5>© 2025 CIMA Automotriz. Todos los derechos reservados.</h5>
+        </div>
+
+        <script src="../html/js/script.js"></script>
+        <script src="../html/js/carrucel.js"></script>
+    </body>
+</html>
+
+
