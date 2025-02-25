@@ -38,7 +38,7 @@ const sendButton = document.getElementById('sendButton');
 let step = 0;
 let selectedService = null;
 let subStep = 0;
-let vehicleData = { servicio:'', marca: '', modelo: '', anio: '', motor: '', tiempoFalla: '', piezasCambiadas: '', problema: '', afinacionfalla: '', moduloprog:''};
+let vehicleData = { servicio:'', marca: '', modelo: '', anio: '', motor: '', tiempoFalla: '', piezasCambiadas: '', problema: '', afinacionfalla: '', moduloprog:'', antecedentes: ''};
 
 function displayMessage(message, fromUser = false) {
     const messageDiv = document.createElement('div');
@@ -123,7 +123,7 @@ function nextStep(input = '') {
                         telefono(input);
                     } else if (selectedOption === 4) {
                         // Solicitar el problema solo si se ha elegido la opción "4"
-                        displayMessage("Por favor escribe el problema que presenta tu vehículo:");
+                        displayMessage("Por favor describe el problema que presenta tu vehículo:");
                         subStep= 10;
                     } else {
                         displayMessage("Gracias por tu información. Un asesor se pondrá en contacto contigo.");
@@ -149,7 +149,7 @@ function nextStep(input = '') {
                         subStep= 7; 
                     } else if (selectedOption === 4) {
                         // Solicitar el problema solo si se ha elegido la opción "4"
-                        displayMessage("Por favor escribe el problema o falla que presenta tu vehículo:");
+                        displayMessage("Por favor describe el problema que presenta tu vehículo:");
                         subStep= 12;
                     } else {
                         displayMessage("Gracias por tu información. Un asesor se pondrá en contacto contigo.");
@@ -230,7 +230,7 @@ function nextStep(input = '') {
                 if (input.trim()) {
                     vehicleData.problema = input.trim();  // Guardar el problema en vehicleData
                     displayMessage(`Gracias por compartir el problema`);
-                    displayMessage(`Después de que inició la falla, ¿Cuánto tiempo lleva?`);
+                    displayMessage(`Ahora, comparte los antecedentes de la falla:`);
                     subStep++;
                 } else if (!input.trim()) {
                     displayMessage("Por favor escribe el problema para continuar.");
@@ -238,7 +238,7 @@ function nextStep(input = '') {
                 break;
 
             case 13:
-                vehicleData.tiempoFalla = input.trim();
+                vehicleData.antecedentes = input.trim();
                 displayMessage("Gracias por tu respuesta. Ahora necesitamos tu número de teléfono para continuar."); // Pasamos input correctamente
                 subStep++;
                 break;
@@ -271,7 +271,7 @@ function resetChat() {
     subStep = 0;
     selectedService = null;
     sendEmail(vehicleData);
-    vehicleData = {servicio:'', marca: '', modelo: '', anio: '', motor: '', tiempoFalla: '', piezasCambiadas: '', problema: '', afinacionfalla: '', moduloprog: '' };
+    vehicleData = {servicio:'', marca: '', modelo: '', anio: '', motor: '', tiempoFalla: '', piezasCambiadas: '', problema: '', afinacionfalla: '', moduloprog: '', antecedentes: '' };
     setTimeout(() => nextStep(), 2000); // Reiniciar con un pequeño retraso
 }
 
@@ -289,7 +289,8 @@ function sendEmail(data) {
         problema: data.problema || 'N/A',
         afinacionfalla: data.afinacionfalla || 'N/A',
         telefono: data.telefono,
-        moduloprog: data.moduloprog || 'N/A'
+        moduloprog: data.moduloprog || 'N/A',
+        antecedentes: data.antecedentes || 'N/A'
     };
 
     emailjs.send("service_owwpmvg", "template_1c65z79", emailParams)
@@ -314,5 +315,3 @@ sendButton.addEventListener('click', () => {
 
 // Inicia el chatbot
 nextStep();
-
-
